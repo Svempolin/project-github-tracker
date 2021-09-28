@@ -1,3 +1,8 @@
 body {
-  background: #FFECE9;
+  background: #ffece9;
+}
+
+.profile_pic {
+  border-radius: 50%;
+  height: 120px;
 }
