@@ -7,7 +7,7 @@ const drawChart = (amount) => {
   const config = {
     type: "doughnut",
     data: {
-      labels: ["projects let", "done"],
+      labels: ["done", "left"],
       datasets: [
         {
           label: "My First Dataset",

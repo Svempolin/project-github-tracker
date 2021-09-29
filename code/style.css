@@ -4,5 +4,63 @@ body {
 
 .profile_pic {
   border-radius: 50%;
-  height: 120px;
+  border: solid black;
+  border-width: 5px;
+}
+.assignments {
+  display: flex;
+  border: solid grey;
+  border-radius: 10px;
+  background-color: #ffece9;
+  flex-direction: column;
+  padding: 50px 20px 50px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Comfortaa", cursive;
+  /* padding-left: 20px; */
+}
+.profile-container {
+  display: flex;
+  border: solid grey;
+  background-color: #ffece9;
+  padding: 50px 20px 50px;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 10px;
+  font-family: "Comfortaa", cursive;
+}
+
+.chart {
+  padding: 40px;
+}
+
+h2 {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+}
+
+@media (min-width: 320px) {
+  .assignments {
+    padding: none;
+  }
+}
+@media (min-width: 1024px) {
+  .assignments {
+    display: flex;
+    padding: 20px;
+    margin: 40px;
+  }
+
+  .main-continer {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-container {
+    margin: 40px;
+  }
+  .profile_pic {
+    height: 250px;
+    width: 250px;
+    margin-left: 35%;
+  }
 }

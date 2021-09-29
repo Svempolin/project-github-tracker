@@ -15,29 +15,28 @@ const getOwner = () => {
     .then((data) => {
       //console.log(data);
       image.src = data.avatar_url;
-      profile.innerHTML += `<p>Username:${data.login}<p>
-      <p>Name:${data.name}<p>
-      `;
+      profile.innerHTML += `<p>Username: ${data.login} </p><p>Name: ${data.name}</p>`;
     });
 };
-
-getOwner();
 
 const getRepos = () => {
   fetch(REPOS_URL)
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
-      const forkedRepos = data.filter((repo) => repo.fork === true);
+      const forkedRepos = data.filter(
+        (repo) => repo.fork && repo.name.startsWith("project-")
+      );
       forkedRepos.forEach(
         (repo) =>
-          (projectContainer.innerHTML += `<div id=${repo.name}> 
-          
-         <h2>${repo.name}</h2>
-         <h4>Latest update: ${new Date(repo.updated_at).toDateString()} </h4> 
+          (projectContainer.innerHTML += `<div 
+          class= "assignments" id="${repo.name}">
+         <h2> ${repo.name}</h2>
          <h4> Default branch:${repo.default_branch} </h4>
+         <h4>Latest update: ${new Date(repo.updated_at).toDateString()} </h4> 
          <h4> The link to: <a href=${repo.html_url}>${repo.name}</a> </h4>
-         </div>`)
+          <p id="commit-${repo.name}""> Amounts of commits: </p>
+          </div>`)
       );
 
       drawChart(forkedRepos.length);
@@ -47,31 +46,36 @@ const getRepos = () => {
 
 getRepos();
 
+//Pullrequest//
 const getPullRequests = (forkedRepos) => {
   forkedRepos.forEach((repo) => {
-    fetch(
-      `https://api.github.com/repos/Technigo/${repo.name}/pulls?per_page=100`
-    )
+    const PULL_URL = `https://api.github.com/repos/Technigo/${repo.name}/pulls?per_page=100`;
+    fetch(PULL_URL)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
-        const pulls = data.filter(
+        const myPulls = data.find(
           (pulls) => pulls.user.login === repo.owner.login
         );
-        console.log(pulls);
-        const myCommit_URL = pulls[0].commits_url;
+
+        myCommits(myPulls.commits_url, repo.name);
         //console.log(myCommit_URL);
         //getCommits(myCommit_URL, repo);
       });
   });
 };
-// const getCommits = (myCommit_URL, repo) => {
-//   fetch(myCommit_URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//     });
-// };
+const myCommits = (myCommitsUrl, myRepoName) => {
+  fetch(myCommitsUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById(
+        `commit-${myRepoName}`
+      ).innerHTML += `${data.length}`;
+    });
+};
+
+getOwner();
+
 //
 //         //TODO
 //         //1. Find only the PR that you made by comparing pull.user.login
