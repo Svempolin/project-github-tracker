@@ -1,74 +1,119 @@
 body {
-  background: #ffece9;
-  margin: 100px;
+  background: rgb(230, 213, 213);
+  margin: none;
 }
 
 .profile-container {
-  display: flex;
-  box-shadow: 3px 1px 8px 3px lightgray;
-  background-color: rgb(237, 205, 205);
-  padding: 50px 20px 50px;
+  background-color: rgb(242, 238, 238);
+  min-width: 200px;
   text-align: center;
-  flex-direction: column;
-  border-radius: 10px;
-  font-family: "Comfortaa", cursive;
+  box-shadow: 1px 1px 8px 3px lightgray;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 15%;
+  padding: 20px;
 }
-
-.repo-container {
-  background-color: #ffece9;
-  /* padding: 0px 0px 15px 0px; */
-  display: grid;
-  justify-content: center;
-  text-align: center;
-  font-family: "Comfortaa", cursive;
+.profile h5 {
+  margin: 0;
 }
 
 .profile_pic {
+  padding-top: 20px;
   margin: auto;
   margin-left: auto;
   margin-right: auto;
-  display: inline-block;
   border-radius: 50%;
-  border: solid black;
   border-width: 5px;
+  height: 170px;
+  width: 170px;
 }
-.assignments {
-  box-shadow: 1px 1px 8px 3px lightgray;
-  width: 92%;
-  margin: 5px 5px 15px 5px;
-  display: grid;
-  padding-right: 10px;
-  background-color: rgb(237, 205, 205);
+.technigo_pic {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
 
-  /* display: flex;
-  border: solid grey;
-  border-radius: 10px;
-  background-color: #ffece9;
+.repo-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  padding: 50px 20px 50px;
+  justify-content: center;
+}
+
+.assignments {
+  background-color: rgb(242, 238, 238);
+  line-height: 1.5;
+  min-width: 200px;
   text-align: center;
-  margin-top: 20px;
-  font-family: "Comfortaa", cursive; */
-  padding-left: 20px;
+  box-shadow: 1px 1px 8px 3px lightgray;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.assignments h4 {
+  margin: 0;
 }
 
 .chart {
   padding: 40px;
 }
 
-h2 {
-  font-family: "Comfortaa", cursive;
-  text-align: center;
-}
+/* Responsive */
 
 @media (min-width: 600px) {
   .repo-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .assignments {
     flex-direction: column;
+    display: flex;
+    width: 40%;
+    height: 40%;
+    flex-wrap: wrap;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 8px 3px black;
+  }
+  .projects {
+    display: flex;
+    flex-direction: row;
   }
 }
-
-.profile_pic {
-  height: 250px;
-  width: 250px;
+@media (min-width: 1024px) {
+  .repo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .assignments {
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 8px 3px black;
+  }
+  .projects {
+    display: flex;
+    flex-direction: row;
+  }
+  .chart-box {
+    width: 10px;
+    height: 10px;
+    border: solid green;
+    padding: none;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+  }
 }

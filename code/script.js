@@ -1,6 +1,7 @@
 const profile = document.getElementById("profile");
 const projectContainer = document.getElementById("projects");
 const image = document.getElementById("image");
+
 const USER = "Svempolin";
 const REPOS_URL = `https://api.github.com/users/${USER}/repos`;
 const OWNER_URL = `https://api.github.com/users/${USER}`;
@@ -15,7 +16,9 @@ const getOwner = () => {
     .then((data) => {
       //console.log(data);
       image.src = data.avatar_url;
-      profile.innerHTML += `<p>Username: ${data.login} </p><p>Name: ${data.name}</p>`;
+      profile.innerHTML += `<h4>Username: ${data.login} </4><h4>Name: ${data.name}</h4>
+      
+      `;
     });
 };
 

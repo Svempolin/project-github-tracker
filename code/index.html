@@ -16,18 +16,23 @@
   </head>
   <body>
     <section class="profile-container" id="profile">
+      
       <img class="profile_pic" id="image" src="" />
+      
+
       <h1>Charlottes GitHub Tracker</h1>
+      <p>Student at Technigo</p>
+      <img class="technigo_pic" src="technigo-logo.png" />
     </section>
 
-    <section class="main-continer">
-      <section class="repo-container">
-        <h2>Projects:</h2>
-        <main class="project" id="projects"></main>
-      </section>
-      <!-- This will be used to draw the chart 👇 -->
+    <!-- <h3>Projects:</h3> -->
+    <main class="repo-container" id="projects"></main>
+    <section class="chart-box"></section>
       <canvas class="chart" id="chart"></canvas>
     </section>
+
+    <!-- This will be used to draw the chart 👇 -->
+
     <script src="./script.js"></script>
     <script src="./chart.js"></script>
   </body>
