@@ -1,6 +1,27 @@
 body {
-  background: rgb(230, 213, 213);
   margin: none;
+  background-color: rgb(236, 208, 208);
+}
+.body-wrapper {
+  background: rgb(242, 238, 238);
+  margin: none;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  border: solid green;
+  width: 300px;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+}
+.header-text {
+  font-family: "Oxygen", sans-serif;
+  font-size: 30px;
+  font-weight: 600px;
+  margin: 10px, 0px, 15px, 0px;
+  color: rgb(80, 84, 87);
 }
 
 .profile-container {
@@ -12,9 +33,12 @@ body {
   margin-right: 30px;
   border-radius: 15%;
   padding: 20px;
+  font-family: "Oxygen", sans-serif;
+  margin-top: 100px;
 }
 .profile h5 {
   margin: 0;
+  font-family: "Oxygen", sans-serif;
 }
 
 .profile_pic {
@@ -39,6 +63,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  font-family: "Oxygen", sans-serif;
 }
 
 .assignments {
@@ -51,14 +76,43 @@ body {
   margin-right: 30px;
   margin: 20px;
   border-radius: 15px;
+  font-family: "Oxygen", sans-serif;
 }
 
 .assignments h4 {
   margin: 0;
+  font-family: "Oxygen", sans-serif;
+}
+.chart-box {
+  text-align: center;
+  /* margin: 15px auto; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 15px 0;
+}
+.chart-section {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
 }
 
-.chart {
-  padding: 40px;
+.chart-headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-wrapper {
+  width: 100%;
+}
+
+h3 {
+  font-family: "Oxygen", sans-serif;
+  font-size: 40px;
+  text-align: center;
 }
 
 /* Responsive */
@@ -102,18 +156,13 @@ body {
     border-radius: 15px;
     box-shadow: 1px 1px 8px 3px black;
   }
+
+  .assignments :hover {
+    background-color: rgb(218, 194, 158);
+  }
+
   .projects {
     display: flex;
     flex-direction: row;
-  }
-  .chart-box {
-    width: 10px;
-    height: 10px;
-    border: solid green;
-    padding: none;
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
   }
 }

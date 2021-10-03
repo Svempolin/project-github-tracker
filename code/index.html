@@ -8,32 +8,50 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+
+    <!-- <link
+      <!-- href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet" --> -->
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+
   <body>
+    <div class=body-wrapper>
     <section class="profile-container" id="profile">
-      
       <img class="profile_pic" id="image" src="" />
-      
-
       <h1>Charlottes GitHub Tracker</h1>
-      <p>Student at Technigo</p>
+      <p>Student @Technigo</p>
+      <a href=https://www.technigo.io>
       <img class="technigo_pic" src="technigo-logo.png" />
+      </a>
     </section>
+    <div class="chart-box">
+      <div class= "chart-section">
+        <div class= "chart-headline">
+          <p class="small-headline">Progress</p>
+        </div>
+          <div class="chart-wrapper"> 
+      <canvas id="chart" class="chart"></canvas>
+          </div>
+        
+        </div>
+    </div>
 
-    <!-- <h3>Projects:</h3> -->
+     <h3> Technigo Projects:</h3> 
     <main class="repo-container" id="projects"></main>
-    <section class="chart-box"></section>
-      <canvas class="chart" id="chart"></canvas>
+    
     </section>
 
     <!-- This will be used to draw the chart 👇 -->
 
     <script src="./script.js"></script>
     <script src="./chart.js"></script>
+  </div>
   </body>
 </html>

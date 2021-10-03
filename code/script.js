@@ -14,10 +14,10 @@ const getOwner = () => {
   fetch(OWNER_URL)
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data);
+      console.log(data);
       image.src = data.avatar_url;
-      profile.innerHTML += `<h4>Username: ${data.login} </4><h4>Name: ${data.name}</h4>
-      
+      profile.innerHTML += `<h4>Username: ${data.login} </4><h4>Name: ${data.name}</h4><h4>Followers:${data.followers}</4>
+
       `;
     });
 };
@@ -39,6 +39,7 @@ const getRepos = () => {
          <h4>Latest update: ${new Date(repo.updated_at).toDateString()} </h4> 
          <h4> The link to: <a href=${repo.html_url}>${repo.name}</a> </h4>
           <p id="commit-${repo.name}""> Amounts of commits: </p>
+          
           </div>`)
       );
 
@@ -62,6 +63,7 @@ const getPullRequests = (forkedRepos) => {
         );
 
         myCommits(myPulls.commits_url, repo.name);
+        myCommits(myPulls.comments_url, repo.name);
         //console.log(myCommit_URL);
         //getCommits(myCommit_URL, repo);
       });
@@ -73,6 +75,16 @@ const myCommits = (myCommitsUrl, myRepoName) => {
     .then((data) => {
       document.getElementById(
         `commit-${myRepoName}`
+      ).innerHTML += `${data.length}`;
+    });
+};
+
+const myComment = (myCommentUrl, myRepoName) => {
+  fetch(myCommentUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById(
+        `comment-${myRepoName}`
       ).innerHTML += `${data.length}`;
     });
 };
